@@ -34,3 +34,9 @@ jobs:
         echo "Job output access: ${{ needs.normal.outputs.hello }}"
       labels: my-label-1
     delegates: cloudbees-io/edge-custom-job/custom-job.yaml
+  register_build_artifact:
+      uses: cloudbees-io/register-build-artifact@v2
+      with:
+        name: myApp
+        url: docker.io/myapp/myimg:1.0.0
+        version: 1.0.0
