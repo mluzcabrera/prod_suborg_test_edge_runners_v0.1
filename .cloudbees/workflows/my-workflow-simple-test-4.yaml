@@ -34,9 +34,3 @@ jobs:
         echo "Job output access: ${{ needs.normal.outputs.hello }}"
       labels: my-label-1
     delegates: cloudbees-io/edge-custom-job/custom-job.yaml
-  register_build_artifact:
-      uses: cloudbees-io/register-build-artifact@v1
-      with:
-        version: ${{cloudbees.version}}
-        url: 476449643511.dkr.ecr.eu-north-1.amazonaws.com/mlcb/demo-artifact:${{cloudbees.version}}
-        name: demo-artifact:${{cloudbees.version}
